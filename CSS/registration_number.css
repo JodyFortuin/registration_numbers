@@ -1,0 +1,20 @@
+
+body {
+    padding-top: 1em;
+    font-size: 1.5em;
+    text-align: center;
+    background-color: #6cdae7;
+}
+
+.regDiv {
+    padding-left: 40%;
+    padding-right: 40%;
+}
+
+.regPlates {
+    padding: 0.2em;
+    border: 2px solid;
+    border-color: black;
+    border-radius: 0.2em;
+    background-color: yellow;
+}
