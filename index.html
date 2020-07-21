@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/registration_number.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <label for="Header">Registration number</label>
+         <input type="text" name="textNumItem" value="" placeholder="enter registration number" class="regNumText">
+         <button class="addBtn" type="button" name="addbutton" >Add</button>
+    </div>
+
+    <div class = "regDiv">
+    <ul class="regPlates"><li>CA 135-506</li></ul>
+     </div>
+
+    <div class="error"></div>
+     
+    <div class="reg radio">
+        <label class="">
+          <input type="radio" name="regNumItem" class="regNumberRadio" value="Cape Town">
+          <span class="label-body">Cape Town</span>
+        </label>
+        <label class="">
+          <input type="radio" name="regNumItem" class="regNumberRadio" value="Strand">
+          <span class="label-body">Strand</span>
+        </label>
+        <label class="">
+            <input type="radio" name="regNumItem" class="regNumberRadio" value="Stellenbosch">
+            <span class="label-body">Stellenbosch</span>
+          </label>
+      </div>
+
+      <div>
+        <button class="showBtn" type="button" name="showbutton" >Show</button>
+      </div>
+    
+      
+</body>
+<script src="factory/registration_number.factory.js"></script>
+<script src="registration_number.js" charset="utf-8"></script>
+</html>
