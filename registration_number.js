@@ -33,6 +33,11 @@ function addPlates(list) {
         regPlatesElem.appendChild(newList);
         }
         
+        var locationRadioBtn = document.querySelector("input[name='regNumItem']:checked");
+        if (locationRadioBtn) {
+            var regNumbItem = checkedRadioBtn.value;
+        }
+        
         var regNumberEntered = regTextElem.value;
         var plateNum = regFact.regNumRegex(regNumberEntered)
         regPlatesElem.innerHTML = regFact.location(plateNum);
@@ -45,6 +50,3 @@ function addPlates(list) {
 }
 console.log(regPlatesElem);
 addBtn.addEventListener('click', addPlates);
-
-
-//get display regPlates to show whole list
