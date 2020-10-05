@@ -19,7 +19,7 @@ function regNumFactory(){
 
     return {
         regNumRegex,
-        location,
+        location,    
     }
 
 }
