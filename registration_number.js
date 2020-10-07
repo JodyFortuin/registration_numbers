@@ -40,12 +40,15 @@ showBtn.addEventListener("click", function () {
                 regFact.showRegList(list);
                 regPlatesElem.innerHTML = regFact.filter(regLocation)
 
-                /*
+      /*          
                 regPlatesElem.innerHTML = "";
                 var location = dropDown;
 
-                var selected = 
+                var selected = regFact.filter(loc)
 
+                var filterSelected = document.createElement("li");
+                filterSelected.innerHTML = selected;
+                theList.appendChild(filterSelected);
                 */
             }
         }
