@@ -7,25 +7,8 @@ const regPlatesElem = document.querySelector(".regPlates")/*display*/
 const regTextElem = document.querySelector(".regNumText")/*textbox*/
 const errorTextElem = document.querySelector(".error")
 
-
 var regs = [];
 
-function addPlates(list) {
-        
-        regPlatesElem.innerHTML = "";
-        for (var i=0 ; i<list.length;i++){
-        const regsListed = list[i];
-        const newList = document.createElement("li");
-        newList.innerHTML = regsListed;
-        regPlatesElem.appendChild(newList);
-        }
-        
-       /* var locationRadioBtn = document.querySelector("input[name='regNumItem']:checked");
-        if (locationRadioBtn) {
-            var regNumbItem = checkedRadioBtn.value;
-        }*/
-        
-}
 console.log(regPlatesElem);
 
 addBtn.addEventListener("click", function () {
@@ -36,9 +19,40 @@ addBtn.addEventListener("click", function () {
         regValue = regTextElem.value;} 
     regs.push(regValue);
 
-    addPlates(regs);
-    
-    /*newList.innerHTML = regValue;
+    regFact.addPlates(regs);
+});
+
+resetBtn.addEventListener("click", function () {
+    regPlatesElem.innerHTML = "";
+    regs = [];   
+});
+
+showBtn.addEventListener("click", function () {
+    //const showBtnFilter = regFact.filter(regs, regTextElem.value);
+    //regFact.showRegList(showBtnFilter);
+
+    var plateEntered = regTextElem.value;
+    var locationRadioBtn = document.querySelector("input[name='regNumItem']:checked");
+        if (locationRadioBtn) {
+            var regLocation = checkedRadioBtn.value;
+            var plateNum = regFact.regNumbRegex(plateEntered)
+            if (plateNum !== "") {
+                regFact.showRegList(list);
+                regPlatesElem.innerHTML = regFact.filter(regLocation)
+
+                /*
+                regPlatesElem.innerHTML = "";
+                var location = dropDown;
+
+                var selected = 
+
+                */
+            }
+        }
+});
+
+/*addBtn regex and error
+newList.innerHTML = regValue;
     regPlatesElem.appendChild(newList);
     var regNumberEntered = regTextElem.value;
     var plateNum = regFact.regNumRegex(regNumberEntered)
@@ -48,32 +62,7 @@ addBtn.addEventListener("click", function () {
         } else {
             errorTextElem.innerHTML = "please enter reg number"
         }*/
-});
-
-resetBtn.addEventListener("click", function () {
-    regPlatesElem.innerHTML = "";
-    regs = [];   
-});
 
 /*if(!regPlatesElem.includes(plateInput)){
 
 }*/
-
-function filter(list, plate){
-    const filtered = [];
-    for (var i=0 ; i<list.length;i++);
-//    const newReg = list[i];
-
-    if(plate.startsWith("CA")){
-        filtered.push(plate);
-    } else if(plate.startsWith("CL")){
-        filtered.push(plate);
-    } else if(plate.startsWith("CEY")){
-        filtered.push(plate);
-    } return filtered;
-}
-
-function showRegList(){
-
-
-}
