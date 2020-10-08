@@ -1,69 +1,50 @@
-function regNumFactory(listed){
+function regNumFactory(regs) {
+  var mainRegList = regs || [];
 
-var mainRegList = listed | [];
-
-    function location(plateNum) {
-        if (plateNum !== "") {
-            regPlates = plateNum;
-        }
-        return regPlates
-      }
-
-      function regNumRegex(plateInput) {
-        var chars = /[^A-Za-z0-9]/g;
-        if (plateInput !== "") {
-        var newPlate = plateInput.replace(chars, "")
-        var upperCase = newPlate.toUpperCase()
-        return upperCase;
-     }
+  function location(plateNum) {
+    if (plateNum !== "") {
+      regPlates = plateNum;
     }
+    return regPlates;
+  }
 
-     function addPlates(list) {
-        
-        regPlatesElem.innerHTML = "";
-        for (var i=0 ; i<list.length;i++){
-        const regsListed = list[i];
-        const newList = document.createElement("li");
-        newList.innerHTML = regsListed;
-        regPlatesElem.appendChild(newList);
-        }
-        
-       /* var locationRadioBtn = document.querySelector("input[name='regNumItem']:checked");
-        if (locationRadioBtn) {
-            var regNumbItem = checkedRadioBtn.value;
-        }*/
-        
-}
+  function regNumRegex(plateInput) {
+    var chars = /[^A-Za-z0-9]/g;
+    if (plateInput !== "") {
+      var newPlate = plateInput.replace(chars, "");
+      var upperCase = newPlate.toUpperCase();
+      return upperCase;
+    }
+  }
 
-function filter(loc){
+  function filter(loc) {
     const filtered = [];
-    for (var i=0 ; i<mainRegList.length;i++);
-     const newReg = mainRegList[i];
+    for (var i = 0; i < mainRegList.length; i++);
+    const newReg = mainRegList[i];
 
-    if(newReg.startsWith(loc)){
-        filtered.push(newReg);
-    
-   /* } else if(newReg.startsWith(loc)){
+    if (newReg.startsWith(loc)) {
+      filtered.push(newReg);
+
+      /* } else if(newReg.startsWith(loc)){
         filtered.push(newReg);
     } else if(newReg.startsWith(loc)){
         filtered.push(newReg);*/
+    }
+    console.log(filtered)
+    return filtered;
+  }
 
-    } return filtered;
-}
-
-function showRegList(list){
+  /*function showRegList(list){
     regPlates.innerHTML = regPlates({
         regs: list
     })
-}
-    return {
-        regNumRegex,
-        location,    
-        addPlates,
-        filter,
-        showRegList,
-    }
-
+}*/
+  return {
+    regNumRegex,
+    location,
+    filter,
+    //     showRegList,
+  };
 }
 
 // strand CEY
