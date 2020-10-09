@@ -4,7 +4,7 @@ const addBtn = document.querySelector(".addBtn")
 const showBtn = document.querySelector(".showBtn")
 const resetBtn = document.querySelector(".resetBtn")
 const regPlatesElem = document.querySelector(".regPlates")/*display*/
-const regTextElem = document.querySelector(".regNumText")/*textbox*/
+const regTextElem = document.querySelector(".regTextElem")/*textbox*/
 const errorTextElem = document.querySelector(".error")
 const dropDown = document.querySelector(".dropDown")
 
@@ -16,17 +16,19 @@ var regs = localStorage['mainRegList'] ? JSON.parse(localStorage['mainRegList'])
 
 addBtn.addEventListener("click", function () {
     //const newList = document.createElement("li");
-    var regValue = ""
+    /*var regValue = ""
 
     if (regTextElem.value) {
         regValue = regTextElem.value;
     regs.push(regValue);
     }
-
-    errorTextElem.innerHTML = ""
-    if (regTextElem.value == "") {
-        errorTextElem.innerHTML = "please enter reg number";
-      }
+*/
+var plateNum=regTextElem.value;
+regFact.addButton(plateNum)   
+// errorTextElem.innerHTML = ""
+    // if (regTextElem.value == "") {
+    //     errorTextElem.innerHTML = "please enter reg number";
+    //   }
 
     regPlatesElem.innerHTML = "";
     for (var i = 0; i < regs.length; i++) {
@@ -41,7 +43,7 @@ addBtn.addEventListener("click", function () {
     var regNumberEntered = regTextElem.value;
     var plateNum = regFact.regNumRegex(regNumberEntered)
     regPlatesElem.innerHTML = regFact.location(plateNum);
-    */}
+    // */}
 localStorage['mainRegList'] = JSON.stringify(regFact.allRegs());  
 });
 

@@ -29,10 +29,24 @@ function regNumFactory(regs) {
     return filtered;
   }
 
+  function addButton(plateNumber){
+    // var regValue = ""
+
+    if (plateNumber!=="") {
+      
+  mainRegList.push(plateNumber);
+  }
+  }
+function allRegs(){
+
+  return mainRegList;
+}
   return {
     regNumRegex,
     location,
     filter,
+    addButton,
+    allRegs
   };
 }
 
