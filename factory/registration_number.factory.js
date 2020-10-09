@@ -21,29 +21,18 @@ function regNumFactory(regs) {
     const filtered = [];
     for (var i = 0; i < mainRegList.length; i++);
     const newReg = mainRegList[i];
-
+    console.log(mainRegList)
     if (newReg.startsWith(loc)) {
       filtered.push(newReg);
-
-      /* } else if(newReg.startsWith(loc)){
-        filtered.push(newReg);
-    } else if(newReg.startsWith(loc)){
-        filtered.push(newReg);*/
     }
     console.log(filtered)
     return filtered;
   }
 
-  /*function showRegList(list){
-    regPlates.innerHTML = regPlates({
-        regs: list
-    })
-}*/
   return {
     regNumRegex,
     location,
     filter,
-    //     showRegList,
   };
 }
 
