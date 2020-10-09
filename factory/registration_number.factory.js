@@ -25,7 +25,7 @@ function regNumFactory(regs) {
     if (newReg.startsWith(loc)) {
       filtered.push(newReg);
     }
-    console.log(filtered)
+    console.log(newReg)
     return filtered;
   }
 

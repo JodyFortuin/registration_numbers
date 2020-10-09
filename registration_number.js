@@ -25,14 +25,16 @@ addBtn.addEventListener("click", function () {
 */
 var plateNum=regTextElem.value;
 regFact.addButton(plateNum)   
+
+var mainRegsFact = regFact.allRegs();
 // errorTextElem.innerHTML = ""
     // if (regTextElem.value == "") {
     //     errorTextElem.innerHTML = "please enter reg number";
     //   }
 
     regPlatesElem.innerHTML = "";
-    for (var i = 0; i < regs.length; i++) {
-      const regsListed = regs[i];
+    for (var i = 0; i < mainRegsFact.length; i++) {
+      const regsListed = mainRegsFact[i];
       const newList = document.createElement("li");
       newList.innerHTML = regsListed;
       regPlatesElem.appendChild(newList);
