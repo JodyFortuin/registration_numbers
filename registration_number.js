@@ -8,7 +8,6 @@ const regTextElem = document.querySelector(".regNumText")/*textbox*/
 const errorTextElem = document.querySelector(".error")
 const dropDown = document.querySelector(".dropDown")
 
-
 var regs = localStorage['mainRegList'] ? JSON.parse(localStorage['mainRegList']) : [];
 
 //var regs = [];
@@ -20,10 +19,10 @@ addBtn.addEventListener("click", function () {
     var regValue = ""
 
     if (regTextElem.value) {
-        regValue = regTextElem.value; 
+        regValue = regTextElem.value;
     regs.push(regValue);
     }
-    
+
     errorTextElem.innerHTML = ""
     if (regTextElem.value == "") {
         errorTextElem.innerHTML = "please enter reg number";
@@ -36,13 +35,14 @@ addBtn.addEventListener("click", function () {
       newList.innerHTML = regsListed;
       regPlatesElem.appendChild(newList);
     //regFact.addPlates(regs);
-    
+
     /*newList.innerHTML = regValue;
     regPlatesElem.appendChild(newList);
     var regNumberEntered = regTextElem.value;
     var plateNum = regFact.regNumRegex(regNumberEntered)
     regPlatesElem.innerHTML = regFact.location(plateNum);
     */}
+localStorage['mainRegList'] = JSON.stringify(regFact.allRegs());  
 });
 
 resetBtn.addEventListener("click", function () {
