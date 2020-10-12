@@ -3,15 +3,10 @@ body {
     padding-top: 1em;
     font-size: 1.5em;
     text-align: center;
-    background-color: whitesmoke
+    background-color: whitesmoke;
 }
 
-.regDiv {
-    padding-left: 40%;
-    padding-right: 40%;
-}
-
-.regPlates {
+li {
     margin:10px;
     padding: 0.2em;
     border: 2px solid;
