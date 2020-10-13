@@ -25,12 +25,17 @@ function add(){
 function regex(){
     //const newList2 = document.createElement("li");
     //var regValue = "";
-    newList2.innerHTML = regValue;
-    regPlatesElem.appendChild(newList2);
-
-    var regNumberEntered = regTextElem.value;
+   
+   /*var regNumberEntered = regTextElem.value;
     var plateNum = regFact.regNumRegex(regNumberEntered)
     regPlatesElem.innerHTML = regFact.location(plateNum);
+    newList2.innerHTML = regValue;
+    regPlatesElem.appendChild(newList2);
+*/
+    /*const newList2 = document.createElement("li");
+    var regValue = "";
+    newList2.innerHTML = regValue;
+    regPlatesElem.appendChild(newList2);*/
 }
 
 addBtn.addEventListener("click", function () {
@@ -38,9 +43,6 @@ addBtn.addEventListener("click", function () {
 errorTextElem.innerHTML = "";
 var plateNum = regTextElem.value;
 regFact.addButton(plateNum)
-
-var plateRegex = regFact.regNumRegex(plateNum);
-regPlatesElem.innerHTML = regFact.location(plateRegex);
     
 localStorage['mainRegList'] = JSON.stringify(regFact.allRegs());  
 

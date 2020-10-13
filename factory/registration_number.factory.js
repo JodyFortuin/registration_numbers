@@ -10,19 +10,13 @@ function regNumFactory(regs) {
 
   function regNumRegex(plateInput) {
     var chars = /[^A-Za-z0-9]/g;
-    //var newPlate = plateInput.replace(chars, "");
-      
     if (plateInput !== "") {
-      var upperCase = plateInput.toUpperCase();
-   //   if(!mainRegList.includes(plateInput)){
-      //  mainRegList.push(upperCase)
-      
-     // return true;
-    //}
-  }return upperCase
-      //return false;
-    }
-  
+      var newPlate = plateInput.replace(chars, "");  
+      var upperCase = newPlate.toUpperCase();
+      return upperCase;
+      }
+      return "";     
+   }
 
 
   function filter(loc) {
@@ -78,4 +72,19 @@ function allRegs(){
             regexPlate += chars;
          }
   return split + " " + regexPlate;
+    }*/
+    
+      /*function regNumRegex(plateInput) {
+    //var chars = /[^A-Za-z0-9]/g;
+    //var newPlate = plateInput.replace(chars, "");
+      
+    if (plateInput !== "") {
+      //var upperCase = plateInput.toUpperCase();
+      if(!mainRegList.includes(plateInput)){
+        mainRegList.push(upperCase)
+      
+      return true;
+    }
+    }
+      return false;
     }*/
